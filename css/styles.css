@@ -1,0 +1,476 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  background-color: black;
+  color: white;
+  overflow-x: hidden;
+  font-family: "Varela", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1em;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /*this is cause the contact page is tiny*/
+}
+header {
+  background-color: #076573;
+  padding: 2vh 2vw;
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+nav {
+  margin-left: auto;
+  display: flex;
+}
+
+.logo-container {
+  flex: 0 0 auto; 
+}
+
+.logo-container img {
+  height: 60px; 
+  width: auto;
+}
+
+nav menu {
+  list-style-type: none; 
+  padding: 0vh 10vw;
+  display: flex;
+  margin-right: 50vw;
+}
+
+nav menu li {
+  margin-right: 5vw;
+}
+
+nav menu li a {
+  color: #888888; 
+  font-size: 1.3em;
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+}
+
+/*this is for the h1 in the product page too lazy to move it down*/
+h1 {
+  margin-top: 1em;
+  font-family: "Tourney", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  font-size: 2em;
+  color: #731507;
+}
+
+/*styles for the home page boxes with the pictures of the gripper set and ronnie coleman*/
+.grid-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: 70vh;
+  width: auto;
+  background-size: cover;
+  background-position: center;
+}
+
+.box-one {
+  background-image: url(../images/gripper-set.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.box-two {
+  background-image: url(../images/ronnie-coleman.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.box {
+  position: relative;
+}
+
+/*little hover affect that brings up the content in a little rectangle guy*/
+.box-one::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0; 
+  background-color: #731507;
+  transition: height 0.5s; 
+}
+
+.box-two::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: #076573; 
+  transition: height 0.5s; 
+}
+
+.box:hover::after {
+  height: 30vh;
+}
+
+/*this puts the content in the rectangle I am very bad at commenting. Just checked the rubric and it looks like these wont be graded anyway. I reuse this a couple times on different pages*/
+.content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box; 
+  opacity: 0; 
+  transition: opacity 0.7s; 
+  z-index: 1;
+}
+
+.content h2 {
+  font-size: 1.4em;
+}
+
+.content p {
+  font-size: 1.2em; 
+}
+
+.content a {
+  font-size: 1.4em;
+}
+
+.box:hover .content {
+  opacity: 1; 
+}
+
+/*Styles for the little buttons inside of the hover affect thingies I built*/
+.box-one a.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #076573; 
+  color: white; 
+  text-decoration: none; 
+  border: 2px solid #076573; 
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+.box-one a.button:hover {
+  background-color: #05464e; 
+  border-color: #05464e;
+  color: #ffffff; 
+}
+
+.box-two a.button {
+  display: inline-block;
+  padding: 10px 20px; 
+  background-color: #731507; 
+  color: white; 
+  text-decoration: none; 
+  border: 2px solid #731507; 
+  border-radius: 5px; 
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s; 
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+.box-two a.button:hover {
+  background-color: #4e0a05;
+  border-color: #4e0a05;
+  color: #ffffff;
+}
+
+/*This is for the contact part with the contact us button and that huge ass forearm*/
+.two-column-section {
+  display: flex; 
+}
+
+.text-column {
+  flex: 1;
+}
+
+.image-column img {
+  max-width: 100%;
+  height: auto; 
+}
+
+.image-column {
+  margin-left: auto;
+}
+
+.text-column {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  text-align: center;
+  font-size: 1em;
+}
+
+.text-column a {
+  display: inline-block;
+  padding: 10px 22px; 
+  background-color: white;
+  color: white; 
+  text-decoration: none; 
+  border: 2px solid white; 
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s; 
+  color: black;
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-variation-settings:
+    "wdth" 100;
+  
+}
+
+.text-column a:hover {
+  background-color: #b1afaf; 
+  border: 2px solid #b1afaf;
+}
+
+/* Footer---------------------------------------------------------------------------------------------*/
+footer {
+  background-color: #076573;
+  padding: 3vh 0px;
+  margin-top: auto;
+}
+footer p{
+  font-family: "Basic", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 0.8em;
+  color: #a3a3a3;
+}
+footer nav {
+  display: flex;
+  justify-content: center;
+}
+
+footer menu {
+  margin-right: 0;
+  padding: 0;
+}
+
+footer {
+  justify-content: center; 
+  align-items: center;
+  text-align: center;
+  padding: 2vh 10vw;
+}
+
+/*Contact Page-----------------------------------------------------------------------------------------*/
+.contact-section {
+  display: flex;
+  align-items: center;
+  padding: 5vh 10vw; 
+}
+
+.contact-info,
+.contact-form {
+  flex: 1;
+  padding: 0 20px;
+}
+
+.contact-info {
+  text-align: center; 
+}
+
+.contact-info h2 {
+  margin-top: 0; 
+}
+
+.contact-info p {
+  margin: 10px 0; 
+}
+
+.contact-form {
+  max-width: 400px;
+  margin: 0 auto; 
+}
+
+.contact-form h2 {
+  margin-top: 0;
+  text-align: center;
+  color: #731507;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.contact-form input,
+.contact-form button {
+  margin-bottom: 10px;
+}
+
+.contact-form input {
+  padding: 5px;
+  border-radius: 10px;
+  border: 1px solid #ccc; 
+}
+
+.contact-form button {
+  padding: 10px; 
+  background-color: #076573;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.5s; 
+}
+
+.contact-form button:hover {
+  background-color: #05464e;
+}
+
+/*Product page----------------------------------------------------------------------------------------*/
+.heading {
+  text-align: center;
+}
+
+.grippers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  height: 70vh;
+  width: auto;
+  padding: 0 1vw;
+}
+
+
+.gbox-one {
+  background-image: url('../images/baby-gripper.png');
+}
+
+.gbox-two {
+  background-image: url('../images/dark-mode-griper.jpg');
+}
+
+.gbox-three {
+  background-image: url('../images/normal-looking-gripper.jpg');
+}
+.gbox-one,.gbox-two,.gbox-three{
+  background-size: cover;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+}
+.gbox-one::after, .gbox-three::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0; 
+  background-color: #731507; 
+  transition: height 0.5s; 
+}
+
+.gbox-two::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0; 
+  background-color: #076573;
+  transition: height 0.5s; 
+}
+.warning{
+  font-family: "Allerta", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: rgb(193, 0, 0);
+}
+.light{
+  font-family: "Oooh Baby", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+.gorilla{
+  font-family: "Protest Revolution", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/*About page-----------------------------------------------------------------------------------------*/
+.about-us {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  height: 300vh; 
+  width: 50vw;
+  padding: 10vh;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: "Varela", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1em;
+}
+.about-us h2{
+  color: #076573;
+  text-shadow: 4px 2px 4px rgba(0, 0, 0, 0.5);
+  font-family: "Tourney", sans-serif;
+  font-size: 1.6em;
+}
+.abox-one, .abox-two, .abox-three {
+  background-size: cover;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.abox-one::after, .abox-two::after, .abox-three::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: #731507;
+  transition: height 0.5s;
+}
+.cool{
+  font-family: "Protest Revolution", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #076573;
+}
+
+.abox-one {
+  background-image: url('../images/our-founder.jpg');
+}
+
+.abox-two {
+  background-image: url('../images/guy-gripping.jpg');
+}
+
+.abox-three {
+  background-image: url('../images/cbum.jpg');
+}
+
